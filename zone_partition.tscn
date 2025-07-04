@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://b858cpbbw07vs"]
+
+[ext_resource type="Texture2D" uid="uid://c3tgf6vbdui77" path="res://icon.svg" id="1_rlv4o"]
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_3b5kk"]
+b = Vector2(0, 15)
+
+[node name="ZonePartition" type="Area2D"]
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(1, 0.5)
+scale = Vector2(0.21875, 0.117187)
+texture = ExtResource("1_rlv4o")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-12, -7)
+shape = SubResource("SegmentShape2D_3b5kk")

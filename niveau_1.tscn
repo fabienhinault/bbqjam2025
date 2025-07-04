@@ -1,0 +1,28 @@
+[gd_scene load_steps=5 format=3 uid="uid://bbjrhvudfs3an"]
+
+[ext_resource type="Texture2D" uid="uid://c3tgf6vbdui77" path="res://icon.svg" id="1_4hq2q"]
+[ext_resource type="Script" path="res://niveau_1.gd" id="1_28wob"]
+[ext_resource type="PackedScene" uid="uid://dtk46j0enkdxn" path="res://joueur.tscn" id="3_y1lh8"]
+[ext_resource type="PackedScene" uid="uid://b858cpbbw07vs" path="res://zone_partition.tscn" id="4_djyrb"]
+
+[node name="Niveau 1" type="Node2D"]
+script = ExtResource("1_28wob")
+
+[node name="ZonePartitionPosition" type="Marker2D" parent="."]
+position = Vector2(600, 382)
+scale = Vector2(8.4375, 5.71094)
+
+[node name="JoueurPosition" type="Marker2D" parent="."]
+position = Vector2(397, 382)
+scale = Vector2(8.4375, 5.71094)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(548, 364.5)
+scale = Vector2(8.4375, 5.71094)
+texture = ExtResource("1_4hq2q")
+
+[node name="Joueur" parent="." instance=ExtResource("3_y1lh8")]
+
+[node name="ZonePartition" parent="." instance=ExtResource("4_djyrb")]
+position = Vector2(-1, -6)
+scale = Vector2(8.4375, 5.71094)
