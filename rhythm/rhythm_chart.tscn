@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://qh1lehkihwl8"]
+
+[ext_resource type="Script" uid="uid://wddpkmfk68ov" path="res://rhythm_chart.gd" id="1_fgqpm"]
+[ext_resource type="PackedScene" uid="uid://ipybyjliotbh" path="res://rhythm/rhythm_note_hit_area.tscn" id="2_dc3u6"]
+
+[node name="RhythmChart" type="Node2D"]
+script = ExtResource("1_fgqpm")
+
+[node name="RhythmNoteHitArea" parent="." instance=ExtResource("2_dc3u6")]

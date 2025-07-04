@@ -6,7 +6,6 @@
 b = Vector2(0, 15)
 
 [node name="ZonePartition" type="Area2D"]
-metadata/_edit_group_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(1, 0.5)

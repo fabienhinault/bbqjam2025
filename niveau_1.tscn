@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://bbjrhvudfs3an"]
 
-[ext_resource type="Texture2D" uid="uid://c3tgf6vbdui77" path="res://icon.svg" id="1_4hq2q"]
-[ext_resource type="Script" path="res://niveau_1.gd" id="1_28wob"]
+[ext_resource type="Script" uid="uid://t34gq7plwoyn" path="res://niveau_1.gd" id="1_28wob"]
+[ext_resource type="Texture2D" uid="uid://cbbe7tprxl8b3" path="res://visuals/test-bg.png" id="2_l8iyw"]
 [ext_resource type="PackedScene" uid="uid://dtk46j0enkdxn" path="res://joueur.tscn" id="3_y1lh8"]
 [ext_resource type="PackedScene" uid="uid://b858cpbbw07vs" path="res://zone_partition.tscn" id="4_djyrb"]
 
@@ -18,8 +18,8 @@ scale = Vector2(8.4375, 5.71094)
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(548, 364.5)
-scale = Vector2(8.4375, 5.71094)
-texture = ExtResource("1_4hq2q")
+scale = Vector2(17.2594, 9.98595)
+texture = ExtResource("2_l8iyw")
 
 [node name="Joueur" parent="." instance=ExtResource("3_y1lh8")]
 

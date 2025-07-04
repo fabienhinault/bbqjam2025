@@ -1,7 +1,11 @@
-[gd_scene load_steps=2 format=3 uid="uid://cm4o6426s48jg"]
+[gd_scene load_steps=3 format=3 uid="uid://cm4o6426s48jg"]
 
 [ext_resource type="PackedScene" uid="uid://dx8fkm61wm4fe" path="res://monde.tscn" id="1_7gvb0"]
+[ext_resource type="PackedScene" uid="uid://ipybyjliotbh" path="res://rhythm/rhythm_note_hit_area.tscn" id="2_0xm2m"]
 
 [node name="Main" type="Node"]
 
 [node name="Monde" parent="." instance=ExtResource("1_7gvb0")]
+
+[node name="RhythmNoteHitArea" parent="." instance=ExtResource("2_0xm2m")]
+position = Vector2(434, 581)

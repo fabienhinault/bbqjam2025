@@ -1,0 +1,85 @@
+[gd_scene load_steps=14 format=3 uid="uid://ipybyjliotbh"]
+
+[ext_resource type="Script" uid="uid://c6cg64ix8egxo" path="res://rhythm/rhythm_note_hit_area.gd" id="1_ft4wo"]
+[ext_resource type="Texture2D" uid="uid://dyqtm8vs523nv" path="res://rhythm/note-red.png" id="2_q5j5x"]
+[ext_resource type="Texture2D" uid="uid://cwewfsp324qd0" path="res://rhythm/note-red-hover.png" id="3_ig1pp"]
+[ext_resource type="Texture2D" uid="uid://wc4yxwev780u" path="res://rhythm/note-green.png" id="4_wno70"]
+[ext_resource type="Texture2D" uid="uid://dcymcvlcs4x1s" path="res://rhythm/note-green-hover.png" id="5_l03if"]
+[ext_resource type="Texture2D" uid="uid://cko3ur0apdcfn" path="res://rhythm/note-yellow.png" id="6_8lwhd"]
+[ext_resource type="Texture2D" uid="uid://bapfe658n0ac2" path="res://rhythm/note-yellow-hover.png" id="7_o3mmf"]
+[ext_resource type="Texture2D" uid="uid://c45uaxxcas8ta" path="res://rhythm/note-blue.png" id="8_fwhkd"]
+[ext_resource type="Texture2D" uid="uid://cr0h87pdu3dsm" path="res://rhythm/note-blue-hover.png" id="9_f8357"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_4xr2a"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_q5j5x")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_ig1pp")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_lxmso"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_wno70")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_l03if")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ysmhb"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_8lwhd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_o3mmf")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_43hs5"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("8_fwhkd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_f8357")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="RhythmNoteHitArea" type="Node2D"]
+script = ExtResource("1_ft4wo")
+
+[node name="Note1" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_4xr2a")
+
+[node name="Note2" type="AnimatedSprite2D" parent="."]
+position = Vector2(59, 0)
+sprite_frames = SubResource("SpriteFrames_lxmso")
+
+[node name="Note3" type="AnimatedSprite2D" parent="."]
+position = Vector2(117, 0)
+sprite_frames = SubResource("SpriteFrames_ysmhb")
+
+[node name="Note4" type="AnimatedSprite2D" parent="."]
+position = Vector2(176, 0)
+sprite_frames = SubResource("SpriteFrames_43hs5")
