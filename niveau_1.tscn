@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://bbjrhvudfs3an"]
 
-[ext_resource type="Texture2D" uid="uid://c3tgf6vbdui77" path="res://icon.svg" id="1_4hq2q"]
 [ext_resource type="Script" path="res://niveau_1.gd" id="1_28wob"]
+[ext_resource type="Texture2D" uid="uid://biiib8c8dkdct" path="res://asset/jazz-club.webp" id="2_irlkm"]
 [ext_resource type="PackedScene" uid="uid://dtk46j0enkdxn" path="res://joueur.tscn" id="3_y1lh8"]
 [ext_resource type="PackedScene" uid="uid://b858cpbbw07vs" path="res://zone_partition.tscn" id="4_djyrb"]
 
@@ -9,20 +9,22 @@
 script = ExtResource("1_28wob")
 
 [node name="ZonePartitionPosition" type="Marker2D" parent="."]
-position = Vector2(600, 382)
+position = Vector2(500, 348)
 scale = Vector2(8.4375, 5.71094)
 
 [node name="JoueurPosition" type="Marker2D" parent="."]
-position = Vector2(397, 382)
+position = Vector2(264, 346)
 scale = Vector2(8.4375, 5.71094)
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(548, 364.5)
-scale = Vector2(8.4375, 5.71094)
-texture = ExtResource("1_4hq2q")
+position = Vector2(505, 350)
+scale = Vector2(1.24965, 0.978167)
+texture = ExtResource("2_irlkm")
 
 [node name="Joueur" parent="." instance=ExtResource("3_y1lh8")]
 
 [node name="ZonePartition" parent="." instance=ExtResource("4_djyrb")]
 position = Vector2(-1, -6)
 scale = Vector2(8.4375, 5.71094)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
