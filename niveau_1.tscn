@@ -9,11 +9,11 @@
 script = ExtResource("1_28wob")
 
 [node name="ZonePartitionPosition" type="Marker2D" parent="."]
-position = Vector2(600, 382)
+position = Vector2(500, 348)
 scale = Vector2(8.4375, 5.71094)
 
 [node name="JoueurPosition" type="Marker2D" parent="."]
-position = Vector2(397, 382)
+position = Vector2(264, 346)
 scale = Vector2(8.4375, 5.71094)
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
@@ -26,3 +26,5 @@ texture = ExtResource("2_l8iyw")
 [node name="ZonePartition" parent="." instance=ExtResource("4_djyrb")]
 position = Vector2(-1, -6)
 scale = Vector2(8.4375, 5.71094)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
