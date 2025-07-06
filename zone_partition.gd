@@ -4,21 +4,25 @@ var score = 0
 var drink = false
 var taux_alcoolémie = 0
 var hit_daffilé = 0
-var malus = 0
+var malus = 1
+
 
 func create_note(noteLabel):
 	if noteLabel == 0 : #if no note in chart, donùt try to spawn ghost note
 		return
-	#if drink == true : #drunk mode
-		#noteLabel = 5
 	## create note
 	var note:Area2D = noteScene.instantiate()
 	var note_sprite = note.find_child("sprite") # le animatedsprite de la note
 	note_sprite.frame = noteLabel # set to correct color
 	add_child(note)
-	note.global_position = find_child("NoteSpawn" + str(noteLabel)).global_position#Vector2(0, 0)#1109, 522.06)
-	#print ( find_child("NoteSpawn" + str(noteLabel)).global_position)
-	print ( note.global_position)
+	note.global_position = find_child("NoteSpawn" + str(noteLabel)).global_position
+	if malus == 1 :
+		var note2:Area2D = noteScene.instantiate()
+		note2.find_child("sprite").frame = noteLabel # set to correct color
+		note2.modulate.a = 0.5
+		add_child(note2)
+		note2.global_position = find_child("NoteSpawn" + str(randi_range(1,4))).global_position
+	
 
 
 

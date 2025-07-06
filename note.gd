@@ -1,7 +1,7 @@
 extends Area2D
 ## script of each note that spawns, handles the player hitting or missing them
 
-var vitesse = 100
+@export var vitesse = 100
 var noteLabel = 0
 var canBeHit = false
 var hithit = false
