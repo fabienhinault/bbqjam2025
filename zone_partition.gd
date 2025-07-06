@@ -6,6 +6,7 @@ var taux_alcoolémie = 0
 var hit_daffilé = 0
 var malus = 0
 var compte = true
+var nmbr_miss = 0
 
 
 func create_note(noteLabel):
@@ -43,13 +44,14 @@ func hit_miss():
 	score -= 10
 	$score.text = str("Score: ", score)
 	hit_daffilé = 0
+	nmbr_miss += 1
 
 func _input(event: InputEvent) -> void:
 	if Input.is_action_just_pressed("GetDrunk") and hit_daffilé >= 10:
 		score += 100
 		hit_daffilé = 0
 		$score.text = str(score)
-		taux_alcoolémie += 10
+		taux_alcoolémie += 1
 
 
 func _on_alcool_timer_timeout() -> void:
