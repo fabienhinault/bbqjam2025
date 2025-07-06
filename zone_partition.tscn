@@ -1,10 +1,14 @@
-[gd_scene load_steps=8 format=3 uid="uid://b858cpbbw07vs"]
+[gd_scene load_steps=12 format=3 uid="uid://b858cpbbw07vs"]
 
 [ext_resource type="Script" uid="uid://bkkho05lj88ys" path="res://zone_partition.gd" id="1_60lps"]
 [ext_resource type="PackedScene" uid="uid://b7bole13xyhj2" path="res://note.tscn" id="2_v3l2g"]
 [ext_resource type="Texture2D" uid="uid://bnmilfwqiulq2" path="res://asset/other assets/line.png" id="3_t0xmp"]
 [ext_resource type="PackedScene" uid="uid://ipybyjliotbh" path="res://rhythm/rhythm_note_hit_area.tscn" id="4_v3l2g"]
 [ext_resource type="LabelSettings" uid="uid://eiioot8vtgss" path="res://fonts/default_textsettings.tres" id="5_ecxnq"]
+[ext_resource type="Texture2D" uid="uid://ckxfdv4qp7x04" path="res://asset/arrows/arrow-1.PNG" id="6_48b2v"]
+[ext_resource type="Texture2D" uid="uid://l86dvkhbadop" path="res://asset/arrows/arrow-2.PNG" id="7_wiwe7"]
+[ext_resource type="Texture2D" uid="uid://cmcv2amiu1rrf" path="res://asset/arrows/arrow-3.PNG" id="8_3nwn1"]
+[ext_resource type="Texture2D" uid="uid://ba5m7ig22176x" path="res://asset/arrows/arrow-4.PNG" id="9_owh4i"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_nflpn"]
 animations = [{
@@ -77,6 +81,78 @@ one_shot = true
 [node name="Effettimer" type="Timer" parent="."]
 wait_time = 5.0
 autostart = true
+
+[node name="particle1" type="CPUParticles2D" parent="."]
+position = Vector2(-19, 2)
+emitting = false
+texture = ExtResource("6_48b2v")
+lifetime = 0.5
+one_shot = true
+speed_scale = 0.85
+explosiveness = 0.95
+randomness = 0.15
+direction = Vector2(0, -100)
+gravity = Vector2(0, 900)
+initial_velocity_min = 10.0
+initial_velocity_max = 20.0
+angular_velocity_min = -38.9
+angular_velocity_max = 720.0
+scale_amount_min = 0.1
+scale_amount_max = 0.1
+
+[node name="particle2" type="CPUParticles2D" parent="."]
+position = Vector2(-19, 8)
+emitting = false
+texture = ExtResource("7_wiwe7")
+lifetime = 0.5
+one_shot = true
+speed_scale = 0.85
+explosiveness = 0.95
+randomness = 0.15
+direction = Vector2(0, -100)
+gravity = Vector2(0, 900)
+initial_velocity_min = 10.0
+initial_velocity_max = 20.0
+angular_velocity_min = -38.9
+angular_velocity_max = 720.0
+scale_amount_min = 0.1
+scale_amount_max = 0.1
+
+[node name="particle3" type="CPUParticles2D" parent="."]
+position = Vector2(-19, 13)
+emitting = false
+texture = ExtResource("8_3nwn1")
+lifetime = 0.5
+one_shot = true
+speed_scale = 0.85
+explosiveness = 0.95
+randomness = 0.15
+direction = Vector2(0, -100)
+gravity = Vector2(0, 900)
+initial_velocity_min = 10.0
+initial_velocity_max = 20.0
+angular_velocity_min = -38.9
+angular_velocity_max = 720.0
+scale_amount_min = 0.1
+scale_amount_max = 0.1
+
+[node name="particle4" type="CPUParticles2D" parent="."]
+position = Vector2(-19, 18)
+emitting = false
+texture = ExtResource("9_owh4i")
+lifetime = 0.5
+one_shot = true
+speed_scale = 0.85
+explosiveness = 0.95
+randomness = 0.15
+direction = Vector2(0, -100)
+gravity = Vector2(0, 900)
+initial_velocity_min = 10.0
+initial_velocity_max = 20.0
+angular_velocity_min = -38.9
+angular_velocity_max = 720.0
+scale_amount_min = 0.1
+scale_amount_max = 0.1
 
 [connection signal="area_entered" from="." to="." method="_on_area_entered"]
 [connection signal="timeout" from="TestTimer" to="." method="_on_test_timer_timeout"]

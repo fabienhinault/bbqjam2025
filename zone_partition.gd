@@ -3,7 +3,7 @@ extends Area2D
 var score = 0
 var drink = false
 var taux_alcoolémie = 0
-var hit_daffilé = 0
+var consecutive_hits = 0
 var malus = 0
 var compte = true
 
@@ -28,26 +28,37 @@ func create_note(noteLabel):
 		note2.global_position = find_child("NoteSpawn" + str(randi_range(1,4))).global_position
 
 
-func _on_test_timer_timeout() -> void:
-	if drink == false :
-		create_note(randi_range(1, 4))
-	else :
-		create_note(5)
+#func _on_test_timer_timeout() -> void:
+	#if drink == false :
+		#create_note(randi_range(1, 4))
+	#else :
+		#create_note(5)
 	
-func hit_success():
+func hit_success(noteLabel):
 	score += 10
 	$score.text = str("Score: ", score)
-	hit_daffilé += 1
+	consecutive_hits += 1
+	
+	#emit particles
+	match noteLabel:
+		1:
+			$particle1.emitting = true
+		2:
+			$particle2.emitting = true
+		3:
+			$particle3.emitting = true
+		4:
+			$particle4.emitting = true
 	
 func hit_miss():
 	score -= 10
 	$score.text = str("Score: ", score)
-	hit_daffilé = 0
+	consecutive_hits = 0
 
 func _input(event: InputEvent) -> void:
-	if Input.is_action_just_pressed("GetDrunk") and hit_daffilé >= 10:
+	if Input.is_action_just_pressed("GetDrunk") and consecutive_hits >= 10:
 		score += 100
-		hit_daffilé = 0
+		consecutive_hits = 0
 		$score.text = str(score)
 		taux_alcoolémie += 10
 

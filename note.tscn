@@ -40,13 +40,14 @@ radius = 20.0
 [node name="note" type="Area2D"]
 scale = Vector2(0.1, 0.1)
 script = ExtResource("1_g50yx")
-vitesse = 400
 metadata/_edit_group_ = true
 
 [node name="sprite" type="AnimatedSprite2D" parent="."]
 scale = Vector2(0.2, 0.2)
 sprite_frames = SubResource("SpriteFrames_4lyw1")
 animation = &"new_animation"
+frame = 1
+frame_progress = 0.895458
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_rh086")

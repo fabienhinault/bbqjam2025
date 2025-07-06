@@ -30,7 +30,7 @@ func _input(event: InputEvent) -> void:
 	## player hits a note
 	if canBeHit == true and Input.is_action_just_pressed("HitNote" + str(noteLabel)):
 		if compte == true:
-			get_parent().hit_success()
+			get_parent().hit_success(noteLabel)
 		queue_free()
 		
 func _on_malus_timer_timeout() -> void:
