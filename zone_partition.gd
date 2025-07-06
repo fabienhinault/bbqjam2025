@@ -13,11 +13,13 @@ func create_note(noteLabel):
 		#noteLabel = 5
 	## create note
 	var note:Area2D = noteScene.instantiate()
-	print ( find_child("NoteSpawn" + str(noteLabel)).global_position)
-	note.global_position = Vector2(1109, 522.06)
 	var note_sprite = note.find_child("sprite") # le animatedsprite de la note
 	note_sprite.frame = noteLabel # set to correct color
 	add_child(note)
+	note.global_position = find_child("NoteSpawn" + str(noteLabel)).global_position#Vector2(0, 0)#1109, 522.06)
+	#print ( find_child("NoteSpawn" + str(noteLabel)).global_position)
+	print ( note.global_position)
+
 
 
 func _on_test_timer_timeout() -> void:

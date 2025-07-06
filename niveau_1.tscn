@@ -436,7 +436,3 @@ offset_left = 418.0
 offset_top = 368.0
 offset_right = 418.0
 offset_bottom = 368.0
-
-[node name="Marker2D" type="Marker2D" parent="."]
-position = Vector2(13901, 6690.72)
-scale = Vector2(12, 12)

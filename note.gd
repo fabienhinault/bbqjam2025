@@ -1,7 +1,7 @@
 extends Area2D
 ## script of each note that spawns, handles the player hitting or missing them
 
-var vitesse = 50
+var vitesse = 100
 var noteLabel = 0
 var canBeHit = false
 var hithit = false
@@ -9,12 +9,11 @@ var malus = false
 
 func _ready() -> void:
 	noteLabel = $sprite.frame
+	print($sprite.frame)
 	canBeHit = false
-	print(global_position)
 
 func _process(delta: float) -> void:
-	#global_position.x -= vitesse * delta
-	print(global_position)
+	global_position.x -= vitesse * delta
 
 func _on_area_entered(area: Area2D) -> void:
 	if area == get_parent(): #player can hit a note
