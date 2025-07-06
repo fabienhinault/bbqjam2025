@@ -11,6 +11,15 @@ var nmbr_miss = 0
 
 func create_note(noteLabel):
 	if noteLabel == 0 : #if no note in chart, donùt try to spawn ghost note
+		if malus == 4 :
+			noteLabel = randi_range(1, 4)
+			var note:Area2D = noteScene.instantiate()
+			var note_sprite = note.find_child("sprite") # le animatedsprite de la note
+			note_sprite.frame = noteLabel # set to correct color
+			add_child(note)
+			note.global_position = find_child("NoteSpawn" + str(noteLabel)).global_position
+			note.modulate.a = 0.3
+			note.compte = false
 		return
 	## create note
 	var note:Area2D = noteScene.instantiate()
@@ -63,6 +72,6 @@ func _on_alcool_timer_timeout() -> void:
 func _on_effettimer_timeout() -> void:
 	var effet = randi_range(1,10)
 	if effet < taux_alcoolémie :
-		malus = randi_range(1,3)
+		malus = randi_range(1,4)
 	else:
 		malus = 0
