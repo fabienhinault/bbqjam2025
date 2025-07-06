@@ -73,6 +73,11 @@ shape = SubResource("RectangleShape2D_af3i6")
 wait_time = 30.0
 one_shot = true
 
+[node name="Effettimer" type="Timer" parent="."]
+wait_time = 5.0
+autostart = true
+
 [connection signal="area_entered" from="." to="." method="_on_area_entered"]
 [connection signal="timeout" from="TestTimer" to="." method="_on_test_timer_timeout"]
 [connection signal="timeout" from="AlcoolTimer" to="." method="_on_alcool_timer_timeout"]
+[connection signal="timeout" from="Effettimer" to="." method="_on_effettimer_timeout"]

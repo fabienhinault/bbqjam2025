@@ -4,7 +4,7 @@ var score = 0
 var drink = false
 var taux_alcoolémie = 0
 var hit_daffilé = 0
-var malus = 2
+var malus = 0
 var compte = true
 
 
@@ -47,12 +47,21 @@ func hit_miss():
 
 func _input(event: InputEvent) -> void:
 	if Input.is_action_just_pressed("GetDrunk") and hit_daffilé >= 10:
-		drink = true
-		$Sprite2D.frame = 1
-		$AlcoolTimer.start()
+		score += 100
+		hit_daffilé = 0
+		$score.text = str(score)
+		taux_alcoolémie += 10
 
 
 func _on_alcool_timer_timeout() -> void:
 	drink = false
 	$Sprite2D.frame = 0
 	taux_alcoolémie += 1
+
+
+func _on_effettimer_timeout() -> void:
+	var effet = randi_range(1,10)
+	if effet < taux_alcoolémie :
+		malus = randi_range(1,3)
+	else:
+		malus = 0
