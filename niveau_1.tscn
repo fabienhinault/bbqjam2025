@@ -5,11 +5,11 @@
 [ext_resource type="PackedScene" uid="uid://dtk46j0enkdxn" path="res://joueur.tscn" id="3_y1lh8"]
 [ext_resource type="Texture2D" uid="uid://bq2pk6cikknl" path="res://asset/jmj/jmj-idle.png" id="4_8l5fr"]
 [ext_resource type="PackedScene" uid="uid://b858cpbbw07vs" path="res://zone_partition.tscn" id="4_djyrb"]
-[ext_resource type="PackedScene" uid="uid://clb6m2jpdq4s7" path="res://ui.tscn" id="5_g77f2"]
+[ext_resource type="PackedScene" path="res://ui.tscn" id="5_g77f2"]
 [ext_resource type="Texture2D" uid="uid://bc1c3qgpnbt4g" path="res://asset/jmj/jmj-play.png" id="5_gxcrq"]
 [ext_resource type="Texture2D" uid="uid://3ed0bc4cg8h8" path="res://asset/jmj/jmj-drink.png" id="6_8twj4"]
 [ext_resource type="AudioStream" uid="uid://b1u73bxphdxgr" path="res://songs/3615 - Hot-Club de Rennes 1941-1952 - 09 Breizonec Blues.mp3" id="6_lt4gm"]
-[ext_resource type="PackedScene" uid="uid://easqd6u1aytj" path="res://suivi_du_niveau_dalcool.tscn" id="10_r22r8"]
+[ext_resource type="PackedScene" uid="uid://dxu80pp22jt0x" path="res://suivi_du_niveau_dalcool.tscn" id="10_r22r8"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_ov43b"]
 animations = [{
@@ -382,7 +382,6 @@ cache/0/71/0/scale = 1.0
 
 [node name="Niveau 1" type="Node2D"]
 script = ExtResource("1_ewjch")
-bpm = 60.0
 vertical_mode = false
 
 [node name="background" type="Sprite2D" parent="."]
@@ -405,9 +404,9 @@ scale = Vector2(12, 12)
 [node name="clock" type="Timer" parent="."]
 
 [node name="winnertext" type="Node2D" parent="."]
+visible = false
 
 [node name="rect" type="ColorRect" parent="winnertext"]
-visible = false
 offset_left = 310.0
 offset_top = 200.0
 offset_right = 350.0
@@ -416,7 +415,6 @@ scale = Vector2(11.4155, 2.54605)
 color = Color(0.180005, 0.180005, 0.180005, 1)
 
 [node name="winnertextlabel" type="Label" parent="winnertext"]
-visible = false
 offset_left = 312.285
 offset_top = 198.371
 offset_right = 772.285
@@ -428,11 +426,15 @@ text = "epic win!!!!!!!!!!!!!"
 
 [node name="Music" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("6_lt4gm")
-autoplay = true
-parameters/looping = true
 
-[node name="Suivi_du_niveau_dalcool" parent="." instance=ExtResource("10_r22r8")]
-offset_left = 418.0
-offset_top = 368.0
-offset_right = 418.0
-offset_bottom = 368.0
+[node name="delay" type="Timer" parent="Music"]
+wait_time = 2.0
+one_shot = true
+
+[node name="alcoolemie" parent="." instance=ExtResource("10_r22r8")]
+offset_left = 310.0
+offset_top = 370.0
+offset_right = 310.0
+offset_bottom = 370.0
+
+[connection signal="timeout" from="Music/delay" to="." method="_on_delay_timeout"]

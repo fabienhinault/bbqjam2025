@@ -7,3 +7,7 @@ func _on_play_pressed() -> void:
 
 func _on_create_pressed() -> void:
 	get_tree().change_scene_to_file("res://chart_creator.tscn")
+
+
+func _on_secretlevel_pressed() -> void:
+	get_tree().change_scene_to_file("res://niveau_2.tscn")

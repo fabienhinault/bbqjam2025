@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://cm4o6426s48jg"]
+[gd_scene load_steps=13 format=3 uid="uid://cm4o6426s48jg"]
 
 [ext_resource type="Script" uid="uid://b2rrktjd2ejhb" path="res://main.gd" id="1_2f1yh"]
 [ext_resource type="Texture2D" uid="uid://3ed0bc4cg8h8" path="res://asset/jmj/jmj-drink.png" id="2_keo6d"]
@@ -12,6 +12,10 @@
 [sub_resource type="LabelSettings" id="LabelSettings_v5c16"]
 font = ExtResource("3_idlkq")
 font_size = 33
+
+[sub_resource type="LabelSettings" id="LabelSettings_5vw27"]
+font = ExtResource("3_idlkq")
+font_size = 12
 
 [sub_resource type="LabelSettings" id="LabelSettings_fkgfj"]
 font = ExtResource("3_idlkq")
@@ -78,6 +82,16 @@ texture_normal = ExtResource("3_q61gd")
 texture_pressed = ExtResource("4_cstdn")
 texture_hover = ExtResource("4_cstdn")
 
+[node name="playsecretlevel" type="TextureButton" parent="."]
+offset_left = 27.0
+offset_top = 646.0
+offset_right = 283.0
+offset_bottom = 902.0
+scale = Vector2(0.510916, 0.231101)
+texture_normal = ExtResource("3_q61gd")
+texture_pressed = ExtResource("4_cstdn")
+texture_hover = ExtResource("4_cstdn")
+
 [node name="CREATE" type="TextureButton" parent="."]
 offset_left = 520.0
 offset_top = 392.0
@@ -95,6 +109,14 @@ offset_right = 437.0
 offset_bottom = 480.0
 text = "Jouer"
 label_settings = SubResource("LabelSettings_v5c16")
+
+[node name="Play2" type="Label" parent="."]
+offset_left = 45.0
+offset_top = 659.0
+offset_right = 151.0
+offset_bottom = 698.0
+text = "niveau secret"
+label_settings = SubResource("LabelSettings_5vw27")
 
 [node name="Edit" type="Label" parent="."]
 offset_left = 551.0
@@ -125,4 +147,5 @@ text = "C'est ma tournée!"
 label_settings = SubResource("LabelSettings_c3uu2")
 
 [connection signal="pressed" from="PLAY" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="playsecretlevel" to="." method="_on_secretlevel_pressed"]
 [connection signal="pressed" from="CREATE" to="." method="_on_create_pressed"]

@@ -1,9 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://b858cpbbw07vs"]
+[gd_scene load_steps=8 format=3 uid="uid://b858cpbbw07vs"]
 
 [ext_resource type="Script" uid="uid://bkkho05lj88ys" path="res://zone_partition.gd" id="1_60lps"]
 [ext_resource type="PackedScene" uid="uid://b7bole13xyhj2" path="res://note.tscn" id="2_v3l2g"]
 [ext_resource type="Texture2D" uid="uid://bnmilfwqiulq2" path="res://asset/other assets/line.png" id="3_t0xmp"]
 [ext_resource type="PackedScene" uid="uid://ipybyjliotbh" path="res://rhythm/rhythm_note_hit_area.tscn" id="4_v3l2g"]
+[ext_resource type="LabelSettings" uid="uid://eiioot8vtgss" path="res://fonts/default_textsettings.tres" id="5_ecxnq"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_nflpn"]
 animations = [{
@@ -52,15 +53,15 @@ position = Vector2(-19, 10.365)
 scale = Vector2(0.06, 0.06)
 
 [node name="TestTimer" type="Timer" parent="."]
-autostart = true
 
 [node name="score" type="Label" parent="."]
-offset_left = -20.0
-offset_top = -5.0
-offset_right = 4.0
-offset_bottom = 32.0
-scale = Vector2(0.210262, 0.10729)
-text = "0"
+offset_left = -24.0
+offset_top = 21.0
+offset_right = 39.0
+offset_bottom = 66.0
+scale = Vector2(0.0849255, 0.0694836)
+text = "Score:"
+label_settings = ExtResource("5_ecxnq")
 
 [node name="NoteDespawnArea" type="Area2D" parent="."]
 position = Vector2(-32, 10.365)

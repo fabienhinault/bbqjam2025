@@ -28,7 +28,6 @@ func create_note(noteLabel):
 		note2.global_position = find_child("NoteSpawn" + str(randi_range(1,4))).global_position
 
 
-
 func _on_test_timer_timeout() -> void:
 	if drink == false :
 		create_note(randi_range(1, 4))
@@ -37,12 +36,12 @@ func _on_test_timer_timeout() -> void:
 	
 func hit_success():
 	score += 10
-	$score.text = str(score)
+	$score.text = str("Score: ", score)
 	hit_daffilé += 1
 	
 func hit_miss():
 	score -= 10
-	$score.text = str(score)
+	$score.text = str("Score: ", score)
 	hit_daffilé = 0
 
 func _input(event: InputEvent) -> void:

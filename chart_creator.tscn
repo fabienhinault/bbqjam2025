@@ -1,7 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://cwm64r1onp3fl"]
+[gd_scene load_steps=3 format=3 uid="uid://clfsg6y6pfv3a"]
 
 [ext_resource type="Script" path="res://chart_creator.gd" id="1_nra0x"]
-[ext_resource type="AudioStream" uid="uid://b1u73bxphdxgr" path="res://songs/3615 - Hot-Club de Rennes 1941-1952 - 09 Breizonec Blues.mp3" id="2_64usb"]
+[ext_resource type="AudioStream" uid="uid://b1u73bxphdxgr" path="res://songs/3615 - Hot-Club de Rennes 1941-1952 - 09 Breizonec Blues.mp3" id="2_xcol8"]
 
 [node name="Control" type="Control"]
 layout_mode = 3
@@ -40,7 +40,7 @@ text = "finish"
 [node name="clock" type="Timer" parent="."]
 
 [node name="Music" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("2_64usb")
+stream = ExtResource("2_xcol8")
 autoplay = true
 parameters/looping = true
 

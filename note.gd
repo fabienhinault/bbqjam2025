@@ -1,7 +1,7 @@
 extends Area2D
 ## script of each note that spawns, handles the player hitting or missing them
 
-@export var vitesse = 100
+@export var vitesse = 400
 var noteLabel = 0
 var canBeHit = false
 var hithit = false
@@ -10,7 +10,6 @@ var compte = true
 
 func _ready() -> void:
 	noteLabel = $sprite.frame
-	print($sprite.frame)
 	canBeHit = false
 
 func _process(delta: float) -> void:
