@@ -389,6 +389,14 @@ position = Vector2(532.5, 358.5)
 scale = Vector2(0.431597, 0.370833)
 texture = ExtResource("2_c4wem")
 
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_left = -114.0
+offset_top = 300.0
+offset_right = -74.0
+offset_bottom = 340.0
+scale = Vector2(32.9664, 21.0812)
+color = Color(0, 0, 0, 0.513726)
+
 [node name="jmj" parent="." instance=ExtResource("3_y1lh8")]
 position = Vector2(200, 475)
 scale = Vector2(0.305, 0.305)
