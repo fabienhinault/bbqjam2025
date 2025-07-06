@@ -4,7 +4,7 @@ var score = 0
 var drink = false
 var taux_alcoolémie = 0
 var hit_daffilé = 0
-var malus = 1
+var malus = 2
 var compte = true
 
 
@@ -17,6 +17,8 @@ func create_note(noteLabel):
 	note_sprite.frame = noteLabel # set to correct color
 	add_child(note)
 	note.global_position = find_child("NoteSpawn" + str(noteLabel)).global_position
+	if malus == 2 :
+		note.global_position = find_child("NoteSpawn" + str(randi_range(1,4))).global_position
 	if malus == 1 :
 		var note2:Area2D = noteScene.instantiate()
 		note2.find_child("sprite").frame = noteLabel # set to correct color
