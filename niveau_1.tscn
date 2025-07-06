@@ -1,30 +1,442 @@
-[gd_scene load_steps=5 format=3 uid="uid://bbjrhvudfs3an"]
+[gd_scene load_steps=13 format=3 uid="uid://bbjrhvudfs3an"]
 
-[ext_resource type="Script" uid="uid://t34gq7plwoyn" path="res://niveau_1.gd" id="1_28wob"]
-[ext_resource type="Texture2D" uid="uid://cbbe7tprxl8b3" path="res://visuals/test-bg.png" id="2_l8iyw"]
+[ext_resource type="Script" uid="uid://bhlfkpr2wb2jx" path="res://scripts/level.gd" id="1_ewjch"]
+[ext_resource type="Texture2D" uid="uid://cg4f8i7w7t0up" path="res://asset/other assets/background.png" id="2_c4wem"]
 [ext_resource type="PackedScene" uid="uid://dtk46j0enkdxn" path="res://joueur.tscn" id="3_y1lh8"]
+[ext_resource type="Texture2D" uid="uid://bq2pk6cikknl" path="res://asset/jmj/jmj-idle.png" id="4_8l5fr"]
 [ext_resource type="PackedScene" uid="uid://b858cpbbw07vs" path="res://zone_partition.tscn" id="4_djyrb"]
+[ext_resource type="PackedScene" uid="uid://clb6m2jpdq4s7" path="res://ui.tscn" id="5_g77f2"]
+[ext_resource type="Texture2D" uid="uid://bc1c3qgpnbt4g" path="res://asset/jmj/jmj-play.png" id="5_gxcrq"]
+[ext_resource type="Texture2D" uid="uid://3ed0bc4cg8h8" path="res://asset/jmj/jmj-drink.png" id="6_8twj4"]
+[ext_resource type="AudioStream" uid="uid://b1u73bxphdxgr" path="res://songs/3615 - Hot-Club de Rennes 1941-1952 - 09 Breizonec Blues.mp3" id="6_lt4gm"]
+[ext_resource type="PackedScene" uid="uid://easqd6u1aytj" path="res://suivi_du_niveau_dalcool.tscn" id="10_r22r8"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ov43b"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_8l5fr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_gxcrq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_8twj4")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="FontFile" id="FontFile_uh5d7"]
+cache/0/16/0/ascent = 0.0
+cache/0/16/0/descent = 0.0
+cache/0/16/0/underline_position = 0.0
+cache/0/16/0/underline_thickness = 0.0
+cache/0/16/0/scale = 1.0
+cache/0/2/0/ascent = 0.0
+cache/0/2/0/descent = 0.0
+cache/0/2/0/underline_position = 0.0
+cache/0/2/0/underline_thickness = 0.0
+cache/0/2/0/scale = 1.0
+cache/0/3/0/ascent = 0.0
+cache/0/3/0/descent = 0.0
+cache/0/3/0/underline_position = 0.0
+cache/0/3/0/underline_thickness = 0.0
+cache/0/3/0/scale = 1.0
+cache/0/4/0/ascent = 0.0
+cache/0/4/0/descent = 0.0
+cache/0/4/0/underline_position = 0.0
+cache/0/4/0/underline_thickness = 0.0
+cache/0/4/0/scale = 1.0
+cache/0/5/0/ascent = 0.0
+cache/0/5/0/descent = 0.0
+cache/0/5/0/underline_position = 0.0
+cache/0/5/0/underline_thickness = 0.0
+cache/0/5/0/scale = 1.0
+cache/0/6/0/ascent = 0.0
+cache/0/6/0/descent = 0.0
+cache/0/6/0/underline_position = 0.0
+cache/0/6/0/underline_thickness = 0.0
+cache/0/6/0/scale = 1.0
+cache/0/7/0/ascent = 0.0
+cache/0/7/0/descent = 0.0
+cache/0/7/0/underline_position = 0.0
+cache/0/7/0/underline_thickness = 0.0
+cache/0/7/0/scale = 1.0
+cache/0/8/0/ascent = 0.0
+cache/0/8/0/descent = 0.0
+cache/0/8/0/underline_position = 0.0
+cache/0/8/0/underline_thickness = 0.0
+cache/0/8/0/scale = 1.0
+cache/0/9/0/ascent = 0.0
+cache/0/9/0/descent = 0.0
+cache/0/9/0/underline_position = 0.0
+cache/0/9/0/underline_thickness = 0.0
+cache/0/9/0/scale = 1.0
+cache/0/10/0/ascent = 0.0
+cache/0/10/0/descent = 0.0
+cache/0/10/0/underline_position = 0.0
+cache/0/10/0/underline_thickness = 0.0
+cache/0/10/0/scale = 1.0
+cache/0/11/0/ascent = 0.0
+cache/0/11/0/descent = 0.0
+cache/0/11/0/underline_position = 0.0
+cache/0/11/0/underline_thickness = 0.0
+cache/0/11/0/scale = 1.0
+cache/0/12/0/ascent = 0.0
+cache/0/12/0/descent = 0.0
+cache/0/12/0/underline_position = 0.0
+cache/0/12/0/underline_thickness = 0.0
+cache/0/12/0/scale = 1.0
+cache/0/13/0/ascent = 0.0
+cache/0/13/0/descent = 0.0
+cache/0/13/0/underline_position = 0.0
+cache/0/13/0/underline_thickness = 0.0
+cache/0/13/0/scale = 1.0
+cache/0/14/0/ascent = 0.0
+cache/0/14/0/descent = 0.0
+cache/0/14/0/underline_position = 0.0
+cache/0/14/0/underline_thickness = 0.0
+cache/0/14/0/scale = 1.0
+cache/0/15/0/ascent = 0.0
+cache/0/15/0/descent = 0.0
+cache/0/15/0/underline_position = 0.0
+cache/0/15/0/underline_thickness = 0.0
+cache/0/15/0/scale = 1.0
+cache/0/17/0/ascent = 0.0
+cache/0/17/0/descent = 0.0
+cache/0/17/0/underline_position = 0.0
+cache/0/17/0/underline_thickness = 0.0
+cache/0/17/0/scale = 1.0
+cache/0/18/0/ascent = 0.0
+cache/0/18/0/descent = 0.0
+cache/0/18/0/underline_position = 0.0
+cache/0/18/0/underline_thickness = 0.0
+cache/0/18/0/scale = 1.0
+cache/0/19/0/ascent = 0.0
+cache/0/19/0/descent = 0.0
+cache/0/19/0/underline_position = 0.0
+cache/0/19/0/underline_thickness = 0.0
+cache/0/19/0/scale = 1.0
+cache/0/20/0/ascent = 0.0
+cache/0/20/0/descent = 0.0
+cache/0/20/0/underline_position = 0.0
+cache/0/20/0/underline_thickness = 0.0
+cache/0/20/0/scale = 1.0
+cache/0/21/0/ascent = 0.0
+cache/0/21/0/descent = 0.0
+cache/0/21/0/underline_position = 0.0
+cache/0/21/0/underline_thickness = 0.0
+cache/0/21/0/scale = 1.0
+cache/0/22/0/ascent = 0.0
+cache/0/22/0/descent = 0.0
+cache/0/22/0/underline_position = 0.0
+cache/0/22/0/underline_thickness = 0.0
+cache/0/22/0/scale = 1.0
+cache/0/23/0/ascent = 0.0
+cache/0/23/0/descent = 0.0
+cache/0/23/0/underline_position = 0.0
+cache/0/23/0/underline_thickness = 0.0
+cache/0/23/0/scale = 1.0
+cache/0/24/0/ascent = 0.0
+cache/0/24/0/descent = 0.0
+cache/0/24/0/underline_position = 0.0
+cache/0/24/0/underline_thickness = 0.0
+cache/0/24/0/scale = 1.0
+cache/0/25/0/ascent = 0.0
+cache/0/25/0/descent = 0.0
+cache/0/25/0/underline_position = 0.0
+cache/0/25/0/underline_thickness = 0.0
+cache/0/25/0/scale = 1.0
+cache/0/26/0/ascent = 0.0
+cache/0/26/0/descent = 0.0
+cache/0/26/0/underline_position = 0.0
+cache/0/26/0/underline_thickness = 0.0
+cache/0/26/0/scale = 1.0
+cache/0/27/0/ascent = 0.0
+cache/0/27/0/descent = 0.0
+cache/0/27/0/underline_position = 0.0
+cache/0/27/0/underline_thickness = 0.0
+cache/0/27/0/scale = 1.0
+cache/0/28/0/ascent = 0.0
+cache/0/28/0/descent = 0.0
+cache/0/28/0/underline_position = 0.0
+cache/0/28/0/underline_thickness = 0.0
+cache/0/28/0/scale = 1.0
+cache/0/29/0/ascent = 0.0
+cache/0/29/0/descent = 0.0
+cache/0/29/0/underline_position = 0.0
+cache/0/29/0/underline_thickness = 0.0
+cache/0/29/0/scale = 1.0
+cache/0/30/0/ascent = 0.0
+cache/0/30/0/descent = 0.0
+cache/0/30/0/underline_position = 0.0
+cache/0/30/0/underline_thickness = 0.0
+cache/0/30/0/scale = 1.0
+cache/0/31/0/ascent = 0.0
+cache/0/31/0/descent = 0.0
+cache/0/31/0/underline_position = 0.0
+cache/0/31/0/underline_thickness = 0.0
+cache/0/31/0/scale = 1.0
+cache/0/32/0/ascent = 0.0
+cache/0/32/0/descent = 0.0
+cache/0/32/0/underline_position = 0.0
+cache/0/32/0/underline_thickness = 0.0
+cache/0/32/0/scale = 1.0
+cache/0/33/0/ascent = 0.0
+cache/0/33/0/descent = 0.0
+cache/0/33/0/underline_position = 0.0
+cache/0/33/0/underline_thickness = 0.0
+cache/0/33/0/scale = 1.0
+cache/0/34/0/ascent = 0.0
+cache/0/34/0/descent = 0.0
+cache/0/34/0/underline_position = 0.0
+cache/0/34/0/underline_thickness = 0.0
+cache/0/34/0/scale = 1.0
+cache/0/35/0/ascent = 0.0
+cache/0/35/0/descent = 0.0
+cache/0/35/0/underline_position = 0.0
+cache/0/35/0/underline_thickness = 0.0
+cache/0/35/0/scale = 1.0
+cache/0/36/0/ascent = 0.0
+cache/0/36/0/descent = 0.0
+cache/0/36/0/underline_position = 0.0
+cache/0/36/0/underline_thickness = 0.0
+cache/0/36/0/scale = 1.0
+cache/0/37/0/ascent = 0.0
+cache/0/37/0/descent = 0.0
+cache/0/37/0/underline_position = 0.0
+cache/0/37/0/underline_thickness = 0.0
+cache/0/37/0/scale = 1.0
+cache/0/38/0/ascent = 0.0
+cache/0/38/0/descent = 0.0
+cache/0/38/0/underline_position = 0.0
+cache/0/38/0/underline_thickness = 0.0
+cache/0/38/0/scale = 1.0
+cache/0/39/0/ascent = 0.0
+cache/0/39/0/descent = 0.0
+cache/0/39/0/underline_position = 0.0
+cache/0/39/0/underline_thickness = 0.0
+cache/0/39/0/scale = 1.0
+cache/0/40/0/ascent = 0.0
+cache/0/40/0/descent = 0.0
+cache/0/40/0/underline_position = 0.0
+cache/0/40/0/underline_thickness = 0.0
+cache/0/40/0/scale = 1.0
+cache/0/41/0/ascent = 0.0
+cache/0/41/0/descent = 0.0
+cache/0/41/0/underline_position = 0.0
+cache/0/41/0/underline_thickness = 0.0
+cache/0/41/0/scale = 1.0
+cache/0/42/0/ascent = 0.0
+cache/0/42/0/descent = 0.0
+cache/0/42/0/underline_position = 0.0
+cache/0/42/0/underline_thickness = 0.0
+cache/0/42/0/scale = 1.0
+cache/0/43/0/ascent = 0.0
+cache/0/43/0/descent = 0.0
+cache/0/43/0/underline_position = 0.0
+cache/0/43/0/underline_thickness = 0.0
+cache/0/43/0/scale = 1.0
+cache/0/44/0/ascent = 0.0
+cache/0/44/0/descent = 0.0
+cache/0/44/0/underline_position = 0.0
+cache/0/44/0/underline_thickness = 0.0
+cache/0/44/0/scale = 1.0
+cache/0/45/0/ascent = 0.0
+cache/0/45/0/descent = 0.0
+cache/0/45/0/underline_position = 0.0
+cache/0/45/0/underline_thickness = 0.0
+cache/0/45/0/scale = 1.0
+cache/0/46/0/ascent = 0.0
+cache/0/46/0/descent = 0.0
+cache/0/46/0/underline_position = 0.0
+cache/0/46/0/underline_thickness = 0.0
+cache/0/46/0/scale = 1.0
+cache/0/47/0/ascent = 0.0
+cache/0/47/0/descent = 0.0
+cache/0/47/0/underline_position = 0.0
+cache/0/47/0/underline_thickness = 0.0
+cache/0/47/0/scale = 1.0
+cache/0/48/0/ascent = 0.0
+cache/0/48/0/descent = 0.0
+cache/0/48/0/underline_position = 0.0
+cache/0/48/0/underline_thickness = 0.0
+cache/0/48/0/scale = 1.0
+cache/0/49/0/ascent = 0.0
+cache/0/49/0/descent = 0.0
+cache/0/49/0/underline_position = 0.0
+cache/0/49/0/underline_thickness = 0.0
+cache/0/49/0/scale = 1.0
+cache/0/50/0/ascent = 0.0
+cache/0/50/0/descent = 0.0
+cache/0/50/0/underline_position = 0.0
+cache/0/50/0/underline_thickness = 0.0
+cache/0/50/0/scale = 1.0
+cache/0/51/0/ascent = 0.0
+cache/0/51/0/descent = 0.0
+cache/0/51/0/underline_position = 0.0
+cache/0/51/0/underline_thickness = 0.0
+cache/0/51/0/scale = 1.0
+cache/0/52/0/ascent = 0.0
+cache/0/52/0/descent = 0.0
+cache/0/52/0/underline_position = 0.0
+cache/0/52/0/underline_thickness = 0.0
+cache/0/52/0/scale = 1.0
+cache/0/53/0/ascent = 0.0
+cache/0/53/0/descent = 0.0
+cache/0/53/0/underline_position = 0.0
+cache/0/53/0/underline_thickness = 0.0
+cache/0/53/0/scale = 1.0
+cache/0/54/0/ascent = 0.0
+cache/0/54/0/descent = 0.0
+cache/0/54/0/underline_position = 0.0
+cache/0/54/0/underline_thickness = 0.0
+cache/0/54/0/scale = 1.0
+cache/0/55/0/ascent = 0.0
+cache/0/55/0/descent = 0.0
+cache/0/55/0/underline_position = 0.0
+cache/0/55/0/underline_thickness = 0.0
+cache/0/55/0/scale = 1.0
+cache/0/56/0/ascent = 0.0
+cache/0/56/0/descent = 0.0
+cache/0/56/0/underline_position = 0.0
+cache/0/56/0/underline_thickness = 0.0
+cache/0/56/0/scale = 1.0
+cache/0/57/0/ascent = 0.0
+cache/0/57/0/descent = 0.0
+cache/0/57/0/underline_position = 0.0
+cache/0/57/0/underline_thickness = 0.0
+cache/0/57/0/scale = 1.0
+cache/0/58/0/ascent = 0.0
+cache/0/58/0/descent = 0.0
+cache/0/58/0/underline_position = 0.0
+cache/0/58/0/underline_thickness = 0.0
+cache/0/58/0/scale = 1.0
+cache/0/59/0/ascent = 0.0
+cache/0/59/0/descent = 0.0
+cache/0/59/0/underline_position = 0.0
+cache/0/59/0/underline_thickness = 0.0
+cache/0/59/0/scale = 1.0
+cache/0/60/0/ascent = 0.0
+cache/0/60/0/descent = 0.0
+cache/0/60/0/underline_position = 0.0
+cache/0/60/0/underline_thickness = 0.0
+cache/0/60/0/scale = 1.0
+cache/0/61/0/ascent = 0.0
+cache/0/61/0/descent = 0.0
+cache/0/61/0/underline_position = 0.0
+cache/0/61/0/underline_thickness = 0.0
+cache/0/61/0/scale = 1.0
+cache/0/62/0/ascent = 0.0
+cache/0/62/0/descent = 0.0
+cache/0/62/0/underline_position = 0.0
+cache/0/62/0/underline_thickness = 0.0
+cache/0/62/0/scale = 1.0
+cache/0/63/0/ascent = 0.0
+cache/0/63/0/descent = 0.0
+cache/0/63/0/underline_position = 0.0
+cache/0/63/0/underline_thickness = 0.0
+cache/0/63/0/scale = 1.0
+cache/0/64/0/ascent = 0.0
+cache/0/64/0/descent = 0.0
+cache/0/64/0/underline_position = 0.0
+cache/0/64/0/underline_thickness = 0.0
+cache/0/64/0/scale = 1.0
+cache/0/65/0/ascent = 0.0
+cache/0/65/0/descent = 0.0
+cache/0/65/0/underline_position = 0.0
+cache/0/65/0/underline_thickness = 0.0
+cache/0/65/0/scale = 1.0
+cache/0/66/0/ascent = 0.0
+cache/0/66/0/descent = 0.0
+cache/0/66/0/underline_position = 0.0
+cache/0/66/0/underline_thickness = 0.0
+cache/0/66/0/scale = 1.0
+cache/0/67/0/ascent = 0.0
+cache/0/67/0/descent = 0.0
+cache/0/67/0/underline_position = 0.0
+cache/0/67/0/underline_thickness = 0.0
+cache/0/67/0/scale = 1.0
+cache/0/68/0/ascent = 0.0
+cache/0/68/0/descent = 0.0
+cache/0/68/0/underline_position = 0.0
+cache/0/68/0/underline_thickness = 0.0
+cache/0/68/0/scale = 1.0
+cache/0/69/0/ascent = 0.0
+cache/0/69/0/descent = 0.0
+cache/0/69/0/underline_position = 0.0
+cache/0/69/0/underline_thickness = 0.0
+cache/0/69/0/scale = 1.0
+cache/0/70/0/ascent = 0.0
+cache/0/70/0/descent = 0.0
+cache/0/70/0/underline_position = 0.0
+cache/0/70/0/underline_thickness = 0.0
+cache/0/70/0/scale = 1.0
+cache/0/71/0/ascent = 0.0
+cache/0/71/0/descent = 0.0
+cache/0/71/0/underline_position = 0.0
+cache/0/71/0/underline_thickness = 0.0
+cache/0/71/0/scale = 1.0
 
 [node name="Niveau 1" type="Node2D"]
-script = ExtResource("1_28wob")
+script = ExtResource("1_ewjch")
+bpm = 60.0
+vertical_mode = false
 
-[node name="ZonePartitionPosition" type="Marker2D" parent="."]
-position = Vector2(500, 348)
-scale = Vector2(8.4375, 5.71094)
+[node name="background" type="Sprite2D" parent="."]
+position = Vector2(532.5, 358.5)
+scale = Vector2(0.431597, 0.370833)
+texture = ExtResource("2_c4wem")
 
-[node name="JoueurPosition" type="Marker2D" parent="."]
-position = Vector2(264, 346)
-scale = Vector2(8.4375, 5.71094)
-
-[node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(548, 364.5)
-scale = Vector2(17.2594, 9.98595)
-texture = ExtResource("2_l8iyw")
-
-[node name="Joueur" parent="." instance=ExtResource("3_y1lh8")]
+[node name="jmj" parent="." instance=ExtResource("3_y1lh8")]
+position = Vector2(200, 475)
+scale = Vector2(0.305, 0.305)
+sprite_frames = SubResource("SpriteFrames_ov43b")
+animation = &"default"
 
 [node name="ZonePartition" parent="." instance=ExtResource("4_djyrb")]
-position = Vector2(-1, -6)
-scale = Vector2(8.4375, 5.71094)
+position = Vector2(593, 426)
+scale = Vector2(12, 12)
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
+[node name="UI" parent="." instance=ExtResource("5_g77f2")]
+
+[node name="clock" type="Timer" parent="."]
+
+[node name="winnertext" type="Node2D" parent="."]
+
+[node name="rect" type="ColorRect" parent="winnertext"]
+visible = false
+offset_left = 310.0
+offset_top = 200.0
+offset_right = 350.0
+offset_bottom = 240.0
+scale = Vector2(11.4155, 2.54605)
+color = Color(0.180005, 0.180005, 0.180005, 1)
+
+[node name="winnertextlabel" type="Label" parent="winnertext"]
+visible = false
+offset_left = 312.285
+offset_top = 198.371
+offset_right = 772.285
+offset_bottom = 341.371
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = SubResource("FontFile_uh5d7")
+theme_override_font_sizes/font_size = 71
+text = "epic win!!!!!!!!!!!!!"
+
+[node name="Music" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_lt4gm")
+autoplay = true
+parameters/looping = true
+
+[node name="Suivi_du_niveau_dalcool" parent="." instance=ExtResource("10_r22r8")]
+offset_left = 418.0
+offset_top = 368.0
+offset_right = 418.0
+offset_bottom = 368.0
+
+[node name="Marker2D" type="Marker2D" parent="."]
+position = Vector2(13901, 6690.72)
+scale = Vector2(12, 12)

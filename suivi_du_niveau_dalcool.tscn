@@ -1,0 +1,40 @@
+[gd_scene load_steps=5 format=3 uid="uid://easqd6u1aytj"]
+
+[ext_resource type="Texture2D" uid="uid://cr0h87pdu3dsm" path="res://asset/old_notes/note-blue-hover.png" id="1_bpj1r"]
+[ext_resource type="Script" uid="uid://xlh63lm3fljw" path="res://suivi_du_niveau_dalcool.gd" id="1_uasll"]
+[ext_resource type="Texture2D" uid="uid://c45uaxxcas8ta" path="res://asset/old_notes/note-blue.png" id="2_ddkgg"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_mv6md"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_bpj1r")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_ddkgg")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Suivi_du_niveau_dalcool" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_uasll")
+
+[node name="ProgressBar" type="ProgressBar" parent="."]
+layout_mode = 0
+offset_right = 174.0
+offset_bottom = 27.0
+max_value = 10.0
+step = 1.0
+show_percentage = false
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(170, 16)
+sprite_frames = SubResource("SpriteFrames_mv6md")

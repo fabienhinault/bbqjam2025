@@ -1,20 +1,54 @@
-[gd_scene load_steps=4 format=3 uid="uid://b7bole13xyhj2"]
+[gd_scene load_steps=10 format=3 uid="uid://b7bole13xyhj2"]
 
-[ext_resource type="Texture2D" uid="uid://c3tgf6vbdui77" path="res://icon.svg" id="1_a5ivy"]
-[ext_resource type="Script" path="res://note.gd" id="1_g50yx"]
+[ext_resource type="Script" uid="uid://db6h6vhxmf7cp" path="res://note.gd" id="1_g50yx"]
+[ext_resource type="Texture2D" uid="uid://cgur01bflnhwe" path="res://asset/old_notes/note-white.png" id="2_chxy0"]
+[ext_resource type="Texture2D" uid="uid://ckxfdv4qp7x04" path="res://asset/arrows/arrow-1.PNG" id="3_jhi04"]
+[ext_resource type="Texture2D" uid="uid://l86dvkhbadop" path="res://asset/arrows/arrow-2.PNG" id="4_t2evg"]
+[ext_resource type="Texture2D" uid="uid://ba5m7ig22176x" path="res://asset/arrows/arrow-4.PNG" id="5_bqg4f"]
+[ext_resource type="Texture2D" uid="uid://cmcv2amiu1rrf" path="res://asset/arrows/arrow-3.PNG" id="6_mtq50"]
+[ext_resource type="Texture2D" uid="uid://cr0h87pdu3dsm" path="res://asset/old_notes/note-blue-hover.png" id="7_wyu57"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_4lyw1"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_chxy0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_jhi04")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_t2evg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_mtq50")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_bqg4f")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_wyu57")
+}],
+"loop": true,
+"name": &"new_animation",
+"speed": 5.0
+}]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_rh086"]
-radius = 14.3178
+radius = 20.0
 
-[node name="note" type="RigidBody2D"]
-gravity_scale = 0.0
+[node name="note" type="Area2D"]
+scale = Vector2(0.1, 0.1)
 script = ExtResource("1_g50yx")
 metadata/_edit_group_ = true
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(0, 0.5)
-scale = Vector2(0.21875, 0.210938)
-texture = ExtResource("1_a5ivy")
+[node name="sprite" type="AnimatedSprite2D" parent="."]
+scale = Vector2(0.2, 0.2)
+sprite_frames = SubResource("SpriteFrames_4lyw1")
+animation = &"new_animation"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_rh086")
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
+[connection signal="area_exited" from="." to="." method="_on_area_exited"]

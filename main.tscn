@@ -1,11 +1,128 @@
-[gd_scene load_steps=3 format=3 uid="uid://cm4o6426s48jg"]
+[gd_scene load_steps=12 format=3 uid="uid://cm4o6426s48jg"]
 
-[ext_resource type="PackedScene" uid="uid://dx8fkm61wm4fe" path="res://monde.tscn" id="1_7gvb0"]
-[ext_resource type="PackedScene" uid="uid://ipybyjliotbh" path="res://rhythm/rhythm_note_hit_area.tscn" id="2_0xm2m"]
+[ext_resource type="Script" uid="uid://b2rrktjd2ejhb" path="res://main.gd" id="1_2f1yh"]
+[ext_resource type="Texture2D" uid="uid://3ed0bc4cg8h8" path="res://asset/jmj/jmj-drink.png" id="2_keo6d"]
+[ext_resource type="FontFile" uid="uid://b0unnt8638tka" path="res://fonts/Libertinus_Mono/LibertinusMono-Regular.ttf" id="3_idlkq"]
+[ext_resource type="Texture2D" uid="uid://ci1ua2ihpd4mo" path="res://asset/ui/button1.png" id="3_q61gd"]
+[ext_resource type="Texture2D" uid="uid://c5n804nx2ufw7" path="res://asset/ui/button1-hover.png" id="4_cstdn"]
+[ext_resource type="FontFile" uid="uid://8hghq5opem1m" path="res://fonts/Henny_Penny/HennyPenny-Regular.ttf" id="4_i8nsx"]
+[ext_resource type="Texture2D" uid="uid://v7iqp1pm1h02" path="res://asset/ui/button2.png" id="5_7fbje"]
+[ext_resource type="Texture2D" uid="uid://bikokywo7souj" path="res://asset/ui/button2-hover.png" id="6_tjs87"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_v5c16"]
+font = ExtResource("3_idlkq")
+font_size = 33
+
+[sub_resource type="LabelSettings" id="LabelSettings_fkgfj"]
+font = ExtResource("3_idlkq")
+font_size = 29
+shadow_size = 6
+shadow_color = Color(0, 0, 0, 1)
+shadow_offset = Vector2(-4, 4)
+
+[sub_resource type="LabelSettings" id="LabelSettings_c3uu2"]
+font = ExtResource("4_i8nsx")
+font_size = 60
+outline_size = 22
+outline_color = Color(0.471261, 0.130003, 0.304288, 1)
 
 [node name="Main" type="Node"]
+script = ExtResource("1_2f1yh")
 
-[node name="Monde" parent="." instance=ExtResource("1_7gvb0")]
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(27.3342, 18.2967)
+color = Color(0.915531, 0.554868, 0.227695, 1)
 
-[node name="RhythmNoteHitArea" parent="." instance=ExtResource("2_0xm2m")]
-position = Vector2(434, 581)
+[node name="ColorRect2" type="ColorRect" parent="."]
+offset_left = 559.0
+offset_top = 930.0
+offset_right = 599.0
+offset_bottom = 970.0
+rotation = -1.16929
+scale = Vector2(27.3342, 18.2967)
+color = Color(0.623827, 0.632596, 0.844878, 1)
+
+[node name="ColorRect3" type="ColorRect" parent="."]
+offset_left = 1025.0
+offset_top = -40.0
+offset_right = 1065.0
+offset_bottom = -3.8147e-05
+rotation = -3.53759
+scale = Vector2(49.0356, 44.5735)
+color = Color(0.371449, 0.723298, 0.710097, 1)
+
+[node name="ColorRect4" type="ColorRect" parent="."]
+offset_left = 105.0
+offset_top = 345.0
+offset_right = 145.0
+offset_bottom = 385.0
+rotation = -5.10741
+scale = Vector2(49.0356, 44.5735)
+color = Color(0.481083, 0.73817, 0.296925, 1)
+
+[node name="Jmj-drink" type="Sprite2D" parent="."]
+position = Vector2(761, 576)
+rotation = -2.73616
+scale = Vector2(0.357328, -0.357328)
+texture = ExtResource("2_keo6d")
+
+[node name="PLAY" type="TextureButton" parent="."]
+offset_left = 277.0
+offset_top = 401.0
+offset_right = 476.0
+offset_bottom = 494.0
+scale = Vector2(0.825048, 0.470065)
+texture_normal = ExtResource("3_q61gd")
+texture_pressed = ExtResource("4_cstdn")
+texture_hover = ExtResource("4_cstdn")
+
+[node name="CREATE" type="TextureButton" parent="."]
+offset_left = 520.0
+offset_top = 392.0
+offset_right = 776.0
+offset_bottom = 648.0
+scale = Vector2(0.771986, 0.531985)
+texture_normal = ExtResource("5_7fbje")
+texture_pressed = ExtResource("6_tjs87")
+texture_hover = ExtResource("6_tjs87")
+
+[node name="Play" type="Label" parent="."]
+offset_left = 331.0
+offset_top = 441.0
+offset_right = 437.0
+offset_bottom = 480.0
+text = "Jouer"
+label_settings = SubResource("LabelSettings_v5c16")
+
+[node name="Edit" type="Label" parent="."]
+offset_left = 551.0
+offset_top = 446.0
+offset_right = 847.0
+offset_bottom = 527.0
+scale = Vector2(0.476457, 0.476457)
+text = "Creer un
+niveau (debug)"
+label_settings = SubResource("LabelSettings_v5c16")
+
+[node name="Subtitle" type="Label" parent="."]
+offset_left = 213.0
+offset_top = 314.0
+offset_right = 675.0
+offset_bottom = 422.0
+scale = Vector2(1.5691, 1.5691)
+text = "Avec Jean Michel Jazz"
+label_settings = SubResource("LabelSettings_fkgfj")
+
+[node name="Title" type="Label" parent="."]
+offset_left = 165.0
+offset_top = 190.0
+offset_right = 627.0
+offset_bottom = 298.0
+scale = Vector2(1.60059, 1.60059)
+text = "C'est ma tournée!"
+label_settings = SubResource("LabelSettings_c3uu2")
+
+[connection signal="pressed" from="PLAY" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="CREATE" to="." method="_on_create_pressed"]

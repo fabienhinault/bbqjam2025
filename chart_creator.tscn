@@ -1,0 +1,48 @@
+[gd_scene load_steps=3 format=3 uid="uid://cwm64r1onp3fl"]
+
+[ext_resource type="Script" path="res://chart_creator.gd" id="1_nra0x"]
+[ext_resource type="AudioStream" uid="uid://b1u73bxphdxgr" path="res://songs/3615 - Hot-Club de Rennes 1941-1952 - 09 Breizonec Blues.mp3" id="2_64usb"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 9.0
+offset_top = -10.0
+offset_right = 9.0
+offset_bottom = -10.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_nra0x")
+bpm = 249.0
+
+[node name="creator" type="Label" parent="."]
+layout_mode = 0
+offset_left = 278.0
+offset_top = 187.0
+offset_right = 504.0
+offset_bottom = 314.0
+text = "how to use:
+press the key per each bneat
+then press enter
+press enter without touching a key to make a blank space
+press th finish button and get your chart code in the debug output"
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 593.0
+offset_top = 196.0
+offset_right = 717.0
+offset_bottom = 260.0
+text = "finish"
+
+[node name="clock" type="Timer" parent="."]
+
+[node name="Music" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_64usb")
+autoplay = true
+parameters/looping = true
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
+[connection signal="timeout" from="clock" to="." method="play_note"]
